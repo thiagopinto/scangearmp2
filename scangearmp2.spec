@@ -1,6 +1,6 @@
 %define VERSION 3.90
 %define RELEASE 3
-
+%define debug_package %{nil}
 %define _arc  %(getconf LONG_BIT)
 %define _is64 %(if [ `getconf LONG_BIT` = "64" ] ; then  printf "64";  fi)
 
@@ -65,8 +65,8 @@ popd
 	install -c -m 666 scangearmp2/src/libsane-canon_pixma.la ${RPM_BUILD_ROOT}%{_libdir}/sane
 	install -c -m 666 scangearmp2/src/.libs/libsane-canon_pixma.a ${RPM_BUILD_ROOT}%{_libdir}/sane
 	install -c -m 666 scangearmp2/src/.libs/libsane-canon_pixma.so.1.0.0 ${RPM_BUILD_ROOT}%{_libdir}/sane
-	ln -sf %{_libdir}/sane/libsane-canon_pixma.so.1.0.0 ${RPM_BUILD_ROOT}%{_libdir}/sane/libsane-canon_pixma.so
-	ln -sf %{_libdir}/sane/libsane-canon_pixma.so.1.0.0 ${RPM_BUILD_ROOT}%{_libdir}/sane/libsane-canon_pixma.so.1
+	install -c -m 666 scangearmp2/src/.libs/libsane-canon_pixma.so.1.0.0 ${RPM_BUILD_ROOT}%{_libdir}/sane/libsane-canon_pixma.so
+	install -c -m 666 scangearmp2/src/.libs/libsane-canon_pixma.so.1.0.0 ${RPM_BUILD_ROOT}%{_libdir}/sane/libsane-canon_pixma.so.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT

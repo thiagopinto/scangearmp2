@@ -170,14 +170,8 @@ apt install ../scangearmp2_3.90-1_amd64.deb
 
 ###### Get developement environnement :
 ```
-yum install gtk2-devel
-yum install libusb-devel
-yum install libjpeg-devel
-yum install gettext-devel
-yum install libtool
-yum install automake
-yum install autoconf
-yum install rpm-build
+sudo dnf install gtk2-devel libusb-devel libjpeg-devel gettext-devel libtool automake autoconf rpm-build
+
 ```
 ###### Get sources :
 ```
